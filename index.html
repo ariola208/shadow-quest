@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shadow Quest - Le Royaume des Ténèbres</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
+</head>
+<body>
+  <div id="game-wrapper">
+    <div id="game-container">
+      <canvas id="game-canvas"></canvas>
+      
+      <div id="hud">
+        <div class="hud-item">
+          <div class="hud-label">⭐ Score</div>
+          <div class="hud-value" id="score-display">000000</div>
+        </div>
+        <div class="hud-item">
+          <div class="hud-label">💎 Rubis</div>
+          <div class="hud-value" id="coin-display">x00</div>
+        </div>
+        <div class="hud-item">
+          <div class="hud-label">❤️ Santé</div>
+          <div class="hud-bar"><div class="hud-bar-fill hp-bar" id="hp-bar" style="width:100%"></div></div>
+        </div>
+        <div class="hud-item">
+          <div class="hud-label">💧 Mana</div>
+          <div class="hud-bar"><div class="hud-bar-fill mana-bar" id="mana-bar" style="width:100%"></div></div>
+        </div>
+        <div class="hud-item">
+          <div class="hud-label">🌍 Monde</div>
+          <div class="hud-value" id="world-display">1-1</div>
+        </div>
+        <div class="hud-item">
+          <div class="hud-label">⏱️ Temps</div>
+          <div class="hud-value" id="time-display">300</div>
+        </div>
+        <div class="hud-item">
+          <div class="hud-label">❤️ Vies</div>
+          <div class="hud-value" id="lives-display">x03</div>
+        </div>
+      </div>
+      
+      <div id="combo-display" class="hidden"></div>
+      
+      <div id="inventory-panel">
+        <div class="inventory-slot" title="Potion (1)">🧪<span class="slot-count" id="potion-count">0</span></div>
+        <div class="inventory-slot" title="Parchemin (2)">📜<span class="slot-count" id="scroll-count">0</span></div>
+        <div class="inventory-slot" title="Clé">🗝️<span class="slot-count" id="key-count">0</span></div>
+      </div>
+      
+      <canvas id="minimap" width="180" height="100"></canvas>
+      
+      <div id="start-screen">
+        <div class="title-container">
+          <h1 class="game-title">⚔️ SHADOW QUEST ⚔️</h1>
+          <p class="game-subtitle">✦ Le Royaume des Ténèbres ✦</p>
+        </div>
+        <div class="controls-grid">
+          <div class="control-card">
+            <p class="control-title">Déplacement</p>
+            <p><span class="control-key">◀ ▶</span> Flèches</p>
+            <p><span class="control-key">A D</span> Clavier</p>
+          </div>
+          <div class="control-card">
+            <p class="control-title">Actions</p>
+            <p><span class="control-key">⬆</span> Sauter</p>
+            <p><span class="control-key">X</span> Attaquer</p>
+          </div>
+          <div class="control-card">
+            <p class="control-title">Magie</p>
+            <p><span class="control-key">C</span> Boule de Feu</p>
+            <p><span class="control-key">V</span> Météores</p>
+          </div>
+          <div class="control-card">
+            <p class="control-title">Objets</p>
+            <p><span class="control-key">1</span> Potion</p>
+            <p><span class="control-key">2</span> Parchemin</p>
+          </div>
+        </div>
+        <button class="game-btn" id="start-btn">⚡ COMMENCER L'AVENTURE ⚡</button>
+      </div>
+      
+      <div id="game-over-screen" class="hidden">
+        <h2>💀 DÉFAITE 💀</h2>
+        <div id="final-score"></div>
+        <button class="game-btn" id="restart-btn">🔄 NOUVELLE QUÊTE</button>
+      </div>
+      
+      <div id="mobile-controls">
+        <button id="btn-left">◀</button>
+        <button id="btn-attack">⚔️</button>
+        <button id="btn-jump">SAUT</button>
+        <button id="btn-right">▶</button>
+      </div>
+    </div>
+  </div>
+  
+  <script type="module" src="js/game.js"></script>
+</body>
+</html>
